@@ -8,10 +8,13 @@
 <!--&lt;!&ndash; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * &ndash;&gt;-->
 
 <h1> Angular</h1>
-<courses></courses>
+<app-courses></app-courses>
+
+<app-server></app-server>
 
 <label>
-  <input [value]="title" type="text" (input)="updateValue({e : $event})">
+  <input [value]="title" type="text" [(ngModel)]="title"/>
+<!--         (input)="updateValue({e : $event})"-->
 {{title}}
 </label>
 
