@@ -10,6 +10,7 @@ export class ServerComponent implements OnInit {
   serverCreateStatus = 'No Server was created';
   serverName = '';
   username = '';
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -22,10 +23,11 @@ export class ServerComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreateStatus = 'Server was created';
   }
 
-  onUsernameReset(){
+  onUsernameReset() {
     this.username = '';
   }
 }
