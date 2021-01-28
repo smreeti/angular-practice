@@ -6,8 +6,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ServerComponent implements OnInit {
   serverId = 10;
-
   allowNewServer = false;
+  serverCreateStatus = 'No Server was created';
+  serverName = '';
+  username = '';
 
   constructor() {
     setTimeout(() => {
@@ -16,5 +18,14 @@ export class ServerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  // tslint:disable-next-line:typedef
+  onCreateServer() {
+    this.serverCreateStatus = 'Server was created';
+  }
+
+  onUsernameReset(){
+    this.username = '';
   }
 }

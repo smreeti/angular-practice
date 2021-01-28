@@ -1,9 +1,33 @@
 <!--STRING INTERPOLATION-->
 <h3>Hi I am server component {{serverId}}.</h3>
 
-<!--PROPERTY BINDING-->
+<!--PROPERTY BINDING AND EVENT BINDING-->
 <button
   class="btn btn-primary"
-  [disabled]="!allowNewServer">Add Server</button>
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()">
+  Add Server
+</button>
+
+<p>{{serverCreateStatus}}</p>
+
+<label>
+  <input type="text" [(ngModel)]="serverName"/>
+  <!--         (input)="updateValue({e : $event})"-->
+  <p> Server Name : {{serverName}} </p>
+</label>
+
+<br>
+
+<label>
+  <input [(ngModel)]="username"/>
+ Username : <p>{{username}}</p>
+</label>
+
+<button class="btn btn-primary"
+        [disabled]="username === ''"
+        (click)="onUsernameReset()">
+  Reset username
+</button>
 <br/>
 
