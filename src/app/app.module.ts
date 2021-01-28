@@ -7,14 +7,12 @@ import {CoursesComponent} from './courses.component';
 import { RecordsService } from './records.service';
 import {FormsModule} from '@angular/forms';
 import {ServerComponent} from './server/server.component';
-import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    ServerComponent,
-    TestComponent
+    ServerComponent
   ],
   imports: [
     BrowserModule,
