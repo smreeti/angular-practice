@@ -7,12 +7,16 @@ import {CoursesComponent} from './courses.component';
 import { RecordsService } from './records.service';
 import {FormsModule} from '@angular/forms';
 import {ServerComponent} from './server/server.component';
+import {CockpitComponent} from './cockpit/cockpit.component';
+import {ServerElementComponent} from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    ServerComponent
+    ServerComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,

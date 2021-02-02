@@ -1,31 +1,34 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
-  title = 'hello-sm';
+  serverElements = [{type: 'server', name: 'Test server', content: 'Just a test!'}];
 
-  records = [
-    {
-      name: 'Smriti',
-      online: true
-    },
-    {
-      name: 'ABC',
-      online: false
-    }
-  ];
-
-  // tslint:disable-next-line:typedef
-  updateValue({e}: { e: any }) {
-    this.title = e.target.value;
-    console.log(e.target.value);
-  }
-
-
+  // onServerAdded(serverData: {serverName: string, serverContent: string}) {
+  //   this.serverElements.push({
+  //     type: 'server',
+  //     name: serverData.serverName,
+  //     content: serverData.serverContent
+  //   });
+  // }
+  //
+  // onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+  //   this.serverElements.push({
+  //     type: 'blueprint',
+  //     name: blueprintData.serverName,
+  //     content: blueprintData.serverContent
+  //   });
+  // }
+  //
+  // onChangeFirst() {
+  //   this.serverElements[0].name = 'Changed!';
+  // }
+  //
+  // onDestroyFirst() {
+  //   this.serverElements.splice(0, 1);
+  // }
 }
-
