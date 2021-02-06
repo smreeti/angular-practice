@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  serverElements = [{type: 'server', name: 'Test server', content: 'Just a test!'}];
+  accounts = [
+    {
+      name: 'Master Account',
+      status: 'active'
+    },
+    {
+      name: 'Testaccount',
+      status: 'inactive'
+    },
+    {
+      name: 'Hidden Account',
+      status: 'unknown'
+    }
+  ];
 
-  onServerAdded = (serverData: {serverName: string, serverContent: string}) => {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    });
-  }
+  onAccountAdded = (newAccount: { name: string, status: string }) => {
+    this.accounts.push(newAccount);
+  };
 
+  onStatusChanged = (updateInfo: { id: number, newStatus: string }) => {
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  };
 }
