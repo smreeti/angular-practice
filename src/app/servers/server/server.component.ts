@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import { ServersService } from '../servers.service';
+import {ServersService} from '../servers.service';
 import {Server} from '../../shared/server.model';
 
 @Component({
@@ -9,13 +9,12 @@ import {Server} from '../../shared/server.model';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
-  server!: {id: number, name: string, status: string};
 
-  constructor(private serversService: ServersService) { }
+  constructor() {
+  }
 
   ngOnInit = () => {
-    // @ts-ignore
-    this.server = this.serversService.getServer(1);
+
   };
 
 
