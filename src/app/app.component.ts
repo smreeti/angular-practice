@@ -1,5 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +7,20 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  genders = ['male', 'female'];
+  signupForm!: FormGroup;
 
-  submitted: Boolean = false;
-  @ViewChild('f') form: NgForm;
-
-  user!: {
-    username: '',
-    email: '',
-    question: ''
-  };
-
-  onSubmit() {
-    this.submitted = true;
-    this.user = this.form.value;
+  ngOnInit(): void {
+    this.signupForm = new FormGroup({
+      'username': new FormControl(null),
+      'email': new FormControl(null),
+      'gender': new FormControl('female'),
+    });
   }
 
+  onSubmit(){
+    console.log(this.signupForm)
+  }
 }
 
