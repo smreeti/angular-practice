@@ -7,24 +7,6 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'hello-sm';
-
-  records = [
-    {
-      name: 'Smriti',
-      online: true
-    },
-    {
-      name: 'ABC',
-      online: false
-    }
-  ];
-
-  // tslint:disable-next-line:typedef
-  updateValue({e}: { e: any }) {
-    this.title = e.target.value;
-    console.log(e.target.value);
-  }
 
 
 }
