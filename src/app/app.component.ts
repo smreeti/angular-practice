@@ -7,7 +7,9 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
-
+  suggestUserName() {
+    const suggestedName = 'Superuser';
+  }
 
 }
 
