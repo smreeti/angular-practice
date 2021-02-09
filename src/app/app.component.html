@@ -23,7 +23,7 @@
                    email
                    ngModel>
             <span
-             *ngIf="!email.valid && email.touched"
+              *ngIf="!email.valid && email.touched"
             >Please enter a valid email</span>
           </div>
         </div>
@@ -38,11 +38,22 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+
         <button class="btn btn-primary"
                 type="submit"
                 [disabled]="!f.valid"
-        >Submit</button>
+        >Submit
+        </button>
       </form>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3> Your data: </h3>
+      <p> Username : {{user.username}} </p>
+      <p> Email: {{user.email}}</p>
+      <p> Question: {{user.question}}</p>
     </div>
   </div>
 </div>

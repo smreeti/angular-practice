@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -9,8 +9,18 @@ import {NgForm} from '@angular/forms';
 
 export class AppComponent {
 
-  onSubmit(form: NgForm) {
-    console.log(form);
+  submitted: Boolean = false;
+  @ViewChild('f') form: NgForm;
+
+  user!: {
+    username: '',
+    email: '',
+    question: ''
+  };
+
+  onSubmit() {
+    this.submitted = true;
+    this.user = this.form.value;
   }
 
 }
