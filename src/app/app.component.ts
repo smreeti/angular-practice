@@ -31,15 +31,6 @@ export class AppComponent implements OnInit {
     this.fetchPosts();
   }
 
-  onFetchPosts() {
-    // Send Http request
-    this.fetchPosts();
-  }
-
-  onClearPosts() {
-    // Send Http request
-  }
-
   private fetchPosts() {
     this.http
       .get<{ [key: string]: Posts }>('https://angular-practice-2a792-default-rtdb.firebaseio.com/posts.json')
@@ -59,4 +50,15 @@ export class AppComponent implements OnInit {
         console.log(posts);
       });
   }
+
+  onFetchPosts() {
+    // Send Http request
+    this.fetchPosts();
+  }
+
+  onClearPosts() {
+    // Send Http request
+  }
+
+
 }
