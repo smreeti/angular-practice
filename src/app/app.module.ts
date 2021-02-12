@@ -1,16 +1,15 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ShortenPipe} from '../pipe/shorten.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShortenPipe
   ],
   imports: [
-    BrowserModule,
-    // FormsModule,
-    ReactiveFormsModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
